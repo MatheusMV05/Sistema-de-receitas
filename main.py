@@ -81,16 +81,41 @@ def salvar_receitas(receitas):
         for receita in receitas:
             file.write(f"{receita['nome']},{receita['pais']},{receita['ingredientes']},{receita['modo_preparo']}\n")
 
+def sugerir_receita_aleatoria(receitas):
+    print("Coloca tua parte aqui fabi")
+    
+
 def exibir_menu():
     #Exibir menu principal
-    print("Bem-vindo ao sistema de receitas!")
+    print("""
+██████╗░███████╗███╗░░░███╗░░░░░░██╗░░░██╗██╗███╗░░██╗██████╗░░█████╗░  ░█████╗░░█████╗░
+██╔══██╗██╔════╝████╗░████║░░░░░░██║░░░██║██║████╗░██║██╔══██╗██╔══██╗  ██╔══██╗██╔══██╗
+██████╦╝█████╗░░██╔████╔██║█████╗╚██╗░██╔╝██║██╔██╗██║██║░░██║██║░░██║  ███████║██║░░██║
+██╔══██╗██╔══╝░░██║╚██╔╝██║╚════╝░╚████╔╝░██║██║╚████║██║░░██║██║░░██║  ██╔══██║██║░░██║
+██████╦╝███████╗██║░╚═╝░██║░░░░░░░░╚██╔╝░░██║██║░╚███║██████╔╝╚█████╔╝  ██║░░██║╚█████╔╝
+╚═════╝░╚══════╝╚═╝░░░░░╚═╝░░░░░░░░░╚═╝░░░╚═╝╚═╝░░╚══╝╚═════╝░░╚════╝░  ╚═╝░░╚═╝░╚════╝░
+
+░██████╗██╗░██████╗████████╗███████╗███╗░░░███╗░█████╗░  ██████╗░███████╗
+██╔════╝██║██╔════╝╚══██╔══╝██╔════╝████╗░████║██╔══██╗  ██╔══██╗██╔════╝
+╚█████╗░██║╚█████╗░░░░██║░░░█████╗░░██╔████╔██║███████║  ██║░░██║█████╗░░
+░╚═══██╗██║░╚═══██╗░░░██║░░░██╔══╝░░██║╚██╔╝██║██╔══██║  ██║░░██║██╔══╝░░
+██████╔╝██║██████╔╝░░░██║░░░███████╗██║░╚═╝░██║██║░░██║  ██████╔╝███████╗
+╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝  ╚═════╝░╚══════╝
+
+██████╗░███████╗░█████╗░███████╗██╗████████╗░█████╗░░██████╗██╗
+██╔══██╗██╔════╝██╔══██╗██╔════╝██║╚══██╔══╝██╔══██╗██╔════╝██║
+██████╔╝█████╗░░██║░░╚═╝█████╗░░██║░░░██║░░░███████║╚█████╗░██║
+██╔══██╗██╔══╝░░██║░░██╗██╔══╝░░██║░░░██║░░░██╔══██║░╚═══██╗╚═╝
+██║░░██║███████╗╚█████╔╝███████╗██║░░░██║░░░██║░░██║██████╔╝██╗
+╚═╝░░╚═╝╚══════╝░╚════╝░╚══════╝╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═════╝░╚═╝""")
     print("Selecione uma opção:")
     print("1 - Cadastrar receita")
     print("2 - Exibir receitas")
     print("3 - Atualizar receita")
     print("4 - Excluir receita")
     print("5 - Filtrar receitas por país")
-    print("6 - Sair")
+    print("6 - Selecionar receita aleatori")
+    print("7 - Sair")
 
 def main():
     #Função principal do sistema de receitas
@@ -101,6 +126,7 @@ def main():
         opcao = input("Digite a opção desejada: ")
         if opcao == "1":
             cadastrar_receita(receitas)
+            salvar_receitas(receitas)
         elif opcao == "2":
             exibir_receitas(receitas)
         elif opcao == "3":
@@ -110,7 +136,8 @@ def main():
         elif opcao == "5":
             filtrar_por_pais(receitas)
         elif opcao == "6":
-            salvar_receitas(receitas)
+            sugerir_receita_aleatoria(receitas)
+        elif opcao == "7":
             print("Obrigado por usar o sistema de receitas!")
             break
         else:
