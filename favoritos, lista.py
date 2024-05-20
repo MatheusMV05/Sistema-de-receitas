@@ -1,12 +1,23 @@
+<<<<<<< HEAD
 def ler_receitas(nome_arquivo): #Lê os nomes das receitas de um arquivo CSV e os retorna como uma lista
     receitas = []
     try:
         with open(nome_arquivo, "r") as arquivo:
+=======
+def ler_receitas(receitas): #Lê os nomes das receitas de um arquivo CSV e os retorna como uma lista
+    receitas = []
+    try:
+        with open("receitas.csv", "r") as arquivo:
+>>>>>>> bea6e409a96c510fa456642efbb7f4dc0a3cc26e
             for linha in arquivo:
                 receita_info = linha.strip().split(",")  # Remove espaços em branco no início e no fim da linha e separa onde tem virgula
                 receitas.append(receita_info)#coleta as informações da receita 
     except FileNotFoundError:
+<<<<<<< HEAD
         print(f"O arquivo {nome_arquivo} não foi encontrado.")
+=======
+        print(f"O arquivo {"receitas.csv"} não foi encontrado.")
+>>>>>>> bea6e409a96c510fa456642efbb7f4dc0a3cc26e
     return receitas
 
 def salvar_receitas_favoritas(receitas_favoritas, nome_arquivo): #Função para salvar uma lista de nomes de receitas em um arquivo CSV.
@@ -17,7 +28,11 @@ def salvar_receitas_favoritas(receitas_favoritas, nome_arquivo): #Função para 
     except FileNotFoundError:
         print(f"O arquivo {nome_arquivo} não conseguiu ser aberto!")
 
+<<<<<<< HEAD
 def exibir_lista_favoritos(nome_arquivo):
+=======
+def exibir_lista_favoritos(nome_arquivo): #mostra a lista de favoritos 
+>>>>>>> bea6e409a96c510fa456642efbb7f4dc0a3cc26e
     print("Lista de Favoritos:")
     try:
         with open(nome_arquivo, "r") as arquivo:
@@ -25,7 +40,11 @@ def exibir_lista_favoritos(nome_arquivo):
                 receita_info = linha.strip().split(",")
                 nome = receita_info[0]
                 ingredientes = receita_info[1]
+<<<<<<< HEAD
                 pais_origem = receita_info[2]
+=======
+                pais_origem = receita_info[2]   
+>>>>>>> bea6e409a96c510fa456642efbb7f4dc0a3cc26e
                 modo_preparo = receita_info[3]  # Adicionando modo de preparo
                 print(f"Nome: {nome}, Ingredientes: {ingredientes}, País de Origem: {pais_origem}, Modo de Preparo: {modo_preparo}")
     except FileNotFoundError:
@@ -55,4 +74,8 @@ def principal():#Função principal dessa parte
         print("As receitas não foram adicionadas ao arquivo!")
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     principal()
+=======
+    principal()
+>>>>>>> bea6e409a96c510fa456642efbb7f4dc0a3cc26e
