@@ -194,8 +194,8 @@ def sugerir_receita_aleatoria(aleatorio):
 def planejador_de_refeicoes(receitas):
     planejador = []
     while True:
-        opcao = input("Deseja adicionar uma receita ao plano de refeições (sim ou não)? : ")
-        if opcao.lower()!= 'sim':
+        opcao = input("Deseja adicionar uma receita ao plano de refeições (s) para sim e (n) para não? : ")
+        if opcao.lower()!= 's':
             break
         else:
             refeicao = input("Digite a refeição (por exemplo, Café da manhã, Almoço, Jantar): ")
@@ -227,10 +227,22 @@ def submenu_refeicoes(receitas):
         elif opcao == "2":
             exibir_planejador()
         elif opcao == "3":
+            apagar_refeicao()
+        elif opcao == "4":
             break
         else:
             print("Opção inválida!")
-            
+
+def apagar_refeicao():
+    nome_refeicao = input("Digite o nome da refeição que deseja apagar: ")
+    with open("planejador.txt", "r") as file:
+        lines = file.readlines()
+    with open("planejador.txt", "w") as file:
+        for line in lines:
+            if nome_refeicao not in line:
+                file.write(line)
+    print("Refeição apagada com sucesso!")
+
 def exibir_submenu_refeicoes():
     print("""
 ██████╗░██╗░░░░░░█████╗░███╗░░██╗███████╗░░░░░██╗░█████╗░██████╗░░█████╗░██████╗░
@@ -241,8 +253,8 @@ def exibir_submenu_refeicoes():
 ╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝""")
     print("1 - Adicionar uma refeição ao plano de refeições")
     print("2 - Exibir refeições")
-    print("3 - Voltar")
-
+    print("3 - Remover refeição")
+    print("4 - Voltar")
 
 
 def exibir_submenu_favoritos():
