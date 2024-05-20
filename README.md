@@ -1,3 +1,5 @@
+# Grupo 11: Fabiana Souza Leão, Julia Maria Teixeira, Maria Claudia Rodrigues Correa de Oliveira Andrade, Matheus Martins Verissimo
+
 # Sistema de receitas
 
 ## Índice
