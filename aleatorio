@@ -1,0 +1,26 @@
+import random
+
+def receitas_aleatorias():  #def para puxar as receitas do arquivo txt e organizar como serão apresentadas
+    with open("aleatorio.txt" , "r", encoding= "utf-8") as file: 
+        receitas_aleatorias = []
+        for linha in file:
+            linha = linha.strip().split(";")
+            if len(linha) < 4: #quantidade dos elementos das receitas (nome, ingrediente,pais,...)
+                print ("Inválido")
+
+            receitas_arquivadas= {
+                "nome": linha[0],
+                "ingredientes": linha[1],
+                "pais_de_origem": linha[2],
+                "modo_de_preparo": linha[3]
+            }
+
+        receitas_aleatorias.append(receitas_arquivadas)
+
+    receitas_aleatorias= random.choice(receitas_aleatorias) #isso para selecionar uma receita ao acaso
+
+    print(f""" Receita aleatória:
+          Nome: {receitas_aleatorias["nome"]}
+          Ingredientes: {receitas_aleatorias["ingredientes"]}
+          País de origem: {receitas_aleatorias["pais_de_origem"]}
+          Modo de preparo: {receitas_aleatorias["modo_de_preparo"]} """)
