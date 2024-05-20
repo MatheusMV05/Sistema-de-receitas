@@ -18,3 +18,9 @@ def planejador_de_refeicoes(receitas):
     with open("planejador.txt", "r") as file:
         for line in file:
             print(line.strip())
+
+def exibir_planejador():
+    print("\nPlanejador de Refeições:")
+    with open("planejador.txt", "r") as file:
+        for line in file:
+            print(line.strip())
