@@ -61,7 +61,11 @@ def excluir_receita(receitas):
             return
     print("Receita não encontrada")
 
-
+def filtrar_por_pais(receitas):
+    # Filtrar receitas por país
+    pais = input("Informe o país: ")
+    receitas_filtradas = [receita for receita in receitas if receita["pais"] == pais]
+    exibir_receitas(receitas_filtradas)
 
 def carregar_receitas():
     # Carregar receitas do arquivo
